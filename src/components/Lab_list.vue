@@ -8,6 +8,7 @@
       <div>标准用时：{{ lab.uptime }}</div>
       <el-divider></el-divider>
     </div>
+    <el-button @click="lab_distribute">发布实验</el-button>
   </div>
 </template>
 
@@ -21,7 +22,9 @@ export default {
   methods: {
     lab_change_handle(i) {
       this.$store.commit('set_lab', this.$store.state.lab_list_store.lab_list[i])
-      // console.log(this.$store.state.labs_store.lab.title)
+    },
+    lab_distribute(){
+      this.$store.commit('lab_distribute')
     }
   }
 }

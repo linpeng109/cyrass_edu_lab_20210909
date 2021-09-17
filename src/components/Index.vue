@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import Center from "@/components/Lab";
-import Left from "@/components/Lab_list";
-import Right from "@/components/Student_list";
 import Header from "@/components/Header";
+import Center from "@/components/Center";
+import Left from "@/components/Left";
+import Right from "@/components/Right";
 
 export default {
   name: "Index",

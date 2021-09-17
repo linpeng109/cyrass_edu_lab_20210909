@@ -1,33 +1,37 @@
+import Mock from 'mockjs'
+
 export default {
     state: {
         clazz: {
-            clazz_num: '001',
-            students: [
-                {
-                    student_name: '赵xx',
-                    host_name: '1',
-                    lab_list:[]
-
-                },
-                {
-                    student_name: '钱xx',
-                    host_name: '2'
-                },
-                {
-                    student_name: '孙xx',
-                    host_name: '3'
-                },
-                {
-                    student_name: '李xx',
-                    host_name: '4'
-                },
-                {
-                    student_name: '周xx',
-                    host_name: '6'
-                }
-
-            ]
-
+            clazz_num: Mock.mock({"clazz_num|1-100": 100}).clazz_num,
+            students: Mock.mock({"students|1-100":
+                    [{
+                        student_name: Mock.mock('@cname'),
+                        host_name: Mock.mock({"host_name|1-100": 100}).host_name,
+                        lab_list: []
+                    }, {
+                        student_name: Mock.mock('@cname'),
+                        host_name: Mock.mock({"host_name|1-100": 100}).host_name,
+                        lab_list: []
+                    }, {
+                        student_name: Mock.mock('@cname'),
+                        host_name: Mock.mock({"host_name|1-100": 100}).host_name,
+                        lab_list: []
+                    }, {
+                        student_name: Mock.mock('@cname'),
+                        host_name: Mock.mock({"host_name|1-100": 100}).host_name,
+                        lab_list: []
+                    }, {
+                        student_name: Mock.mock('@cname'),
+                        host_name: Mock.mock({"host_name|1-100": 100}).host_name,
+                        lab_list: []
+                    }]
+            }).students,
+        }
+    },
+    getters: {
+        get_student_num: (state) => {
+            return state.clazz.students.length
         }
     }
 }
